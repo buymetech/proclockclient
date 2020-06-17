@@ -3,7 +3,9 @@
 
 namespace BuyMe\ProcLockClient;
 
-use {ZMQ, ZMQSocket, ZMQContext};
+use ZMQ;
+use ZMQSocket;
+use ZMQContext;
 
 class Lock
 {
