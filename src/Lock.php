@@ -33,6 +33,5 @@ class Lock
     public function unlock(): void
     {
         $this->socket->send("u$this->resource");
-        $this->socket->recv();
     }
 }
