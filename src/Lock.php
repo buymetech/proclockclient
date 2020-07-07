@@ -20,7 +20,7 @@ class Lock
     {
         $this->resource = $resource;
         $ctx = new ZMQContext();
-        $this->socket = $ctx->getSocket(ZMQ::SOCKET_REQ, "client_socket");
+        $this->socket = $ctx->getSocket(ZMQ::SOCKET_REQ);
         $this->socket->connect($url);
     }
 
