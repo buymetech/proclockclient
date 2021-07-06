@@ -6,6 +6,7 @@ namespace BuyMe\ProcLockClient;
 use ZMQ;
 use ZMQSocket;
 use ZMQContext;
+use ZMQSocketException;
 
 class Lock
 {
@@ -32,6 +33,14 @@ class Lock
 
     public function unlock(): void
     {
-        $this->socket->send("u$this->resource");
+        try {
+            $this->socket->send("u$this->resource");
+        }
+        catch (ZMQSocketException $e) {
+            //silence the double unlock call
+            if (false === strpos($e->getMessage(), 'Operation cannot be accomplished in current state')) {
+                throw $e;
+            }
+        }
     }
 }

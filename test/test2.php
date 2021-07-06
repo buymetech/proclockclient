@@ -27,6 +27,7 @@ function process($id) {
     $now = getTime();
     echo "[$now] $id - unlocking\n";
     $lock->unlock();
+    $lock->unlock();
 }
 
 function getTime() {
