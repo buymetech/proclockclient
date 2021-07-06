@@ -1,5 +1,5 @@
 {
-    "name": "BuyMe/proc-lock-client",
+    "name": "buyme/proc-lock-client",
     "description": "ZMQ based process lock client.",
     "type": "library",
     "license": "proprietary",
