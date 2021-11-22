@@ -1,5 +1,9 @@
 <?php
-require "../vendor/autoload.php";
+if (file_exists("../vendor/autoload.php"))
+    require "../vendor/autoload.php";
+elseif (file_exists("../../../autoload.php"))
+    require "../../../autoload.php";
+else exit('Exiting: no autoload.php found.');
 
 $id = pcntl_fork();
 echo "$id\n";
