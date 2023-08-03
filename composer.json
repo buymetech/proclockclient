@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "ext-zmq": "=0|^1.1"
+        "ext-zmq": "^1.1"
     },
     "require-dev": {
         "laravel/laravel": "4.2.*"
